@@ -157,6 +157,7 @@ for key in ["started","history","finished","tone","current_question","transcript
 # ============================
 page = st.sidebar.radio("Navigate Pages", ["Voice Interview", "📊 Interview Analysis"])
 
+st.sidebar.write("This API Key : 'AIzaSyBl79ucqcFpALPspGWtftOxeecqpg8t3ZA'")
 # ============================
 # PRE-INTERVIEW SETUP
 # ============================
@@ -357,3 +358,4 @@ if page=="📊 Interview Analysis" and st.session_state.finished and client:
         report_text += f"{role}: {m['text']}\n"
     report_text += "\n\n=== ANALYSIS ===\n" + json.dumps(analysis, indent=2)
     st.download_button("📄 Download TXT Report", report_text, "interview_report.txt")
+
